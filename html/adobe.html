@@ -28,35 +28,27 @@
 
 				<section class="images-section-wrapper">
 					<div class="intro-gif">
-						<img class= "intro-gif" src="/assets/adobe/webp/1_Adobe_A_rotation_2.webp" alt="">
+						<!-- <img class= "intro-gif" src="/assets/adobe/webp/1_Adobe_A_rotation_2.webp" alt=""> -->
 
 						<picture class="intro-gif">
   							<!-- WebP variants -->
   							<source
   							  type="image/webp"
   							  srcset="
-  							    optimized/foo-500.webp  500w,
-  							    optimized/foo-640.webp  640w,
-  							    optimized/foo-1280.webp 1280w"
+  							    /assets/adobe/webp/optimized/1_Adobe_A_rotation_2-500.webp  500w,
+  							    /assets/adobe/webp/optimized/1_Adobe_A_rotation_2-640.webp  640w,
+  							    /assets/adobe/webp/optimized/1_Adobe_A_rotation_2-1280.webp 1280w,
+								/assets/adobe/webp/1_Adobe_A_rotation_2.webp 1936w"
+								
   							  sizes="(max-width: 600px)  500px,
   							         (max-width: 900px)  640px,
-  							         1280px">
-
-  							<!-- JPEG fallback (optional) -->
-  							<source
-  							  type="image/jpeg"
-  							  srcset="
-  							    optimized/foo-500.jpg  500w,
-  							    optimized/foo-640.jpg  640w,
-  							    optimized/foo-1280.jpg 1280w"
-  							  sizes="(max-width: 600px)  500px,
-  							         (max-width: 900px)  640px,
-  							         1280px">
-
+  							         (max-width: 1280px) 1280px,
+									 1936px">
+  						
   							<!-- Always include an <img> fallback -->
   							<img
-  							  src="optimized/foo-640.webp"
-  							  alt="Illustration of…"
+  							  src="/assets/adobe/webp/1_Adobe_A_rotation_2.webp" 
+							  alt="Adobe gif"
   							  loading="lazy"
   							  decoding="async">
 						</picture>
@@ -87,7 +79,30 @@
 					</div>
 
 					<div class="aaa3_5 slide">
-						<img src="/assets/adobe/webp/aaa3_5.webp" alt="">
+						
+
+						<picture class="aaa3_5 slide">
+  							<!-- WebP variants -->
+  							<source
+  							  type="image/webp"
+  							  srcset="
+  							    /assets/adobe/webp/optimized/aaa3_5-500.webp  500w,
+  							    /assets/adobe/webp/optimized/aaa3_5-640.webp  640w,
+  							    /assets/adobe/webp/optimized/aaa3_5-1280.webp 1280w,
+								/assets/adobe/webp/aaa3_5.webp 1540w"
+								
+  							  sizes="(max-width: 600px)  500px,
+  							         (max-width: 900px)  640px,
+  							         (max-width: 1280px) 1280px,
+									 1540px">
+  						
+  							<!-- Always include an <img> fallback -->
+  							<img
+  							  src="/assets/adobe/webp/aaa3_5.webp" alt="Adobe exploding colors animation" 
+							  alt="Adobe gif"
+  							  loading="lazy"
+  							  decoding="async">
+						</picture>
 					</div>
 
 					<div class="aaa4 slide">
@@ -96,6 +111,9 @@
 
 					<div class="aaa5 slide">
 						<img src="/assets/adobe/webp/aaa5.webp" alt="">
+
+
+
 					</div>
 
 					<div class="aaa6 slide">
