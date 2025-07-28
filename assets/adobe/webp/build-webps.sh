@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 #
-# build-webps.sh — generate 500, 640, 1280-wide animated WebPs
+# build-webps.sh — generate 500, 640, 800, 1100-wide animated WebPs
 
 # your breakpoints
-WIDTHS=(500 640 1280)
+WIDTHS=(500 640 800 1100)
 
 # ensure the output folder exists
 mkdir -p optimized
