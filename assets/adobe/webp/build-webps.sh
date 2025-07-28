@@ -1,31 +1,20 @@
 #!/usr/bin/env bash
 #
-# build-webps.sh — generate 320, 640, 1280-wide WebP animations
+# build-webps.sh — generate 500, 640, 1280-wide animated WebPs
 
-# target widths
-WIDTHS=(320 640 1280)
+# your breakpoints
+WIDTHS=(500 640 1280)
 
-# quality & compression settings
-Q=60
-CLEVEL=6
-FPS=12
-LOOP=0
-
-# output folder
+# ensure the output folder exists
 mkdir -p optimized
 
+# for every .webp in this folder…
 for src in *.webp; do
   base="${src%.webp}"
   for w in "${WIDTHS[@]}"; do
     out="optimized/${base}-${w}.webp"
-    echo "Generating ${out}…"
-    ffmpeg -y \
-      -i "$src" \
-      -vf "scale=${w}:-1:flags=lanczos,fps=${FPS}" \
-      -c:v libwebp \
-      -q:v "${Q}" \
-      -compression_level "${CLEVEL}" \
-      -loop "${LOOP}" \
-      "$out"
+    echo "→ Generating ${out}…"
+    # everything on one line, no backslashes or comments in between
+    magick "$src" -coalesce -resize "${w}x" -layers Optimize "$out"
   done
 done

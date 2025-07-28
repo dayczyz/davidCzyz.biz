@@ -29,6 +29,37 @@
 				<section class="images-section-wrapper">
 					<div class="intro-gif">
 						<img class= "intro-gif" src="/assets/adobe/webp/1_Adobe_A_rotation_2.webp" alt="">
+
+						<picture class="intro-gif">
+  							<!-- WebP variants -->
+  							<source
+  							  type="image/webp"
+  							  srcset="
+  							    optimized/foo-500.webp  500w,
+  							    optimized/foo-640.webp  640w,
+  							    optimized/foo-1280.webp 1280w"
+  							  sizes="(max-width: 600px)  500px,
+  							         (max-width: 900px)  640px,
+  							         1280px">
+
+  							<!-- JPEG fallback (optional) -->
+  							<source
+  							  type="image/jpeg"
+  							  srcset="
+  							    optimized/foo-500.jpg  500w,
+  							    optimized/foo-640.jpg  640w,
+  							    optimized/foo-1280.jpg 1280w"
+  							  sizes="(max-width: 600px)  500px,
+  							         (max-width: 900px)  640px,
+  							         1280px">
+
+  							<!-- Always include an <img> fallback -->
+  							<img
+  							  src="optimized/foo-640.webp"
+  							  alt="Illustration of…"
+  							  loading="lazy"
+  							  decoding="async">
+						</picture>
 					</div>
 
 					<div class="aaa1 slide">
