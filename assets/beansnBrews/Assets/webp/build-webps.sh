@@ -3,7 +3,7 @@
 # build-webps.sh — generate 500, 640, 800, 1100-wide animated WebPs
 # with boosted quality and best-method compression
 
-WIDTHS=(500 640 800 1100)
+WIDTHS=(600 640 800 1100)
 mkdir -p optimized
 
 for src in *.webp; do
