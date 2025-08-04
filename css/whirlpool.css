@@ -1,5 +1,5 @@
 /* ===================== */
-/*The Perfect AI Assistant*/
+/* Whirlpool */
 /* ===================== */
 /* Box Model Hack */
 * {
@@ -11,10 +11,10 @@
   --section-gap: 5rem;
 
   /* spacing between graphic elements  */
-  --graphic-gap: -.5rem;
+  --graphic-gap: 0rem;
 
   /* remove the gap between divs  */
-  --slide-gap: -.25rem;
+  --slide-gap: 0;
 
   --element-spacing: 2rem;
 
@@ -49,6 +49,24 @@ body {
   font-family: Helvetica, sans-serif;
   
 }
+/* ===================== */
+/* Removes the 2px lines between inline videos */
+.images-section-wrapper video,
+.images-section-wrapper img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  vertical-align: top; /* just in case */
+}
+
+.images-section-wrapper > div {
+  margin: 0;
+  padding: 0;
+}
+/* ======================== */
+
 
 .site-header{
   width: 100vw;
@@ -75,7 +93,9 @@ body {
   display: block;
 
 }
-
+.div {
+  margin-bottom: rem;
+}
 .intro-text{
     padding: 0 5.5rem 2rem 5.5rem;
   }
