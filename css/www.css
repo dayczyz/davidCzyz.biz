@@ -11,7 +11,7 @@
   --section-gap: 5rem;
 
   /* spacing between graphic elements  */
-  --graphic-gap: -.5rem;
+  --graphic-gap: 1rem;
 
   /* remove the gap between divs  */
   --slide-gap: -.25rem;
@@ -80,26 +80,38 @@ body {
 .bottom-graphics {
   display: flex;
   flex-direction: column;
-  gap: var(--graphic-gap)
+  gap: var(--graphic-gap);
+  margin-bottom: 6rem;
 }
 .graphic{
   width: 100%;
   display: flex;
-  /* justify-content: center; */
+  justify-content: space-between;
+  
+}
+
+.row{
+  display: flex;
+  justify-content: space-between;
+  padding-top: 3.5rem;
+  
 }
 
 .graphic img{
   max-width: 400px;
   width: 100%;
   height: auto;
+  border-radius: 5px;
 }
 
-.graphic.left{
-  /* justify-content: flex-start; */
+.left{
+padding-left: 1.5rem;
+padding-right: 1.5rem;
 }
 
-.graphic.right{
-  /* justify-content: flex-end; */
+.right{
+padding-left: 1.5rem;
+padding-right: 1.5rem;
 }
 
 
