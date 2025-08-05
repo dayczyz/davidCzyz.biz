@@ -30,8 +30,23 @@
 					<div class="spaghettiO_1 slide">
 						<video autoplay loop muted playsinline>
 
-								<source src="/assets/spaghettiOs/webm/header/1_spaghetti-o2-813.webm">
-								<source src="/assets/spaghettiOs/png/1_spaghetti-o2.gif">
+							 <!-- 1. AV1/WebM first -->
+  							<source
+  							  src="/assets/spaghettiOs/webm/header/1_spaghetti-o2-813.webm"
+  							  type="video/webm"
+  							>
+													
+  							<!-- 2. H.264/MP4 fallback -->
+  							<!-- <source
+  							  src="/assets/spaghettiOs/mp4/header/1_spaghetti-o2-813.mp4"
+  							  type="video/mp4"
+  							> -->
+													
+  							<!-- 3. last‐resort: static GIF -->
+  							<img
+  							  src="/assets/spaghettiOs/png/1_spaghetti-o2.gif"
+  							  alt="SpaghettiOs animation"
+  							>
 
 							</video>
 						<!-- <img src="/assets/spaghettiOs/webp/1_spaghetti-o2.gif" alt="SpaghettiOs O on a red ground."> -->
