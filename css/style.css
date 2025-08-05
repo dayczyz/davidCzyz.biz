@@ -18,7 +18,7 @@
   /* icon gutter controls the icon offset from the rightmost element */
   --icon-gutter: 2.5rem;
 
-  /* adjusting to get the icon and the right most elements to work in sync */
+  --project-gap: 1.5rem;
 
   /* fluid gap & height bounds for corporate logos */
   /* .75rem, 2vw 1.75rem */
@@ -366,6 +366,7 @@ li.whirlpool-logo{
     margin: 12%;
   }
     :root{
+  /* p */
   --fs-2: 1.25rem;
   /* h1 */
   --fs-8: 2.527rem;
@@ -385,7 +386,8 @@ li.whirlpool-logo{
    --logo-gap: clamp(1rem, 5vw, 4rem);
    --logo-height: clamp(50px, 10vw, 75px);
 
-
+   /* spacing between projects on mobile */
+   --project-gap: 2rem;
   
  
   }
@@ -462,19 +464,28 @@ li.whirlpool-logo{
   /* adjust the min-height to change the limit between projects.  */
   .project-div{
     width: 100%;
+    /* 40 */
     height: 40vh;
-    min-height: 330px;
+    /* 330 */
+    min-height: 400px;
     max-height: 500px;
-    margin-bottom: var(--section-gap)
+    margin-bottom: var(--project-gap)
   }
   /* increasing max-height allows the sequential image to fill the space left by the div above. Change the vh height if you want a wider aspect ratio like David's sketch.  */
   .project-img{
-    height: 35vh;
+   
+    height: 45vh;
     max-height: 450px;
   }
   .project-text{
     padding: 3% 0 5% 0;
+    
   }
+  .project-brand,
+  .project-name{
+    font-size: var(--fs-2);
+  }
+
   .project-text span.project-arrow {
   margin: 0;
   padding: 0px;top: -1px;left: 7px;
