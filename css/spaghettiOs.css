@@ -136,11 +136,22 @@ p{
   margin-bottom: 0;
  
 }
+.spaghettiO_1 video,
+.big-matrix video,
+.af-matrix video,
+.quad-matrix video{
+  max-width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+.quad-matrix video{
+  margin-top: var(--row-gap)
+}
 
-
-
-.big-matrix .row .slide img,
-.af-matrix .row .slide img{
+/* .big-matrix .row .slide img, */
+.af-matrix .row .slide img
+{
   display: block;
   width: 100%;
   height: 100%;
