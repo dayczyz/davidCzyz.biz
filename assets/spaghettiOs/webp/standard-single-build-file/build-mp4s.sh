@@ -12,7 +12,7 @@ SRC_DIR="$BASEDIR"
 OUTPUT_DIR="$BASEDIR/../mp4"
 
 # tweak to whatever widths you need
-WIDTHS=(1000)
+WIDTHS=(2000)
 
 mkdir -p "$OUTPUT_DIR"
 
