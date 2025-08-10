@@ -319,6 +319,9 @@ li.whirlpool-logo{
 .project-img a {
   padding: 2.5%;
 }
+.project-img video{
+  margin-top: -1.4rem;
+}
 .project-text {
   display: flex;
   justify-content: space-between;
@@ -473,9 +476,12 @@ li.whirlpool-logo{
   }
   /* increasing max-height allows the sequential image to fill the space left by the div above. Change the vh height if you want a wider aspect ratio like David's sketch.  */
   .project-img{
-   
-    height: 45vh;
-    max-height: 450px;
+    /* height: 45vh; */
+    max-height: 360px;
+  }
+
+  .project-img video{
+    margin: -3.45rem 0
   }
   .project-text{
     padding: 3% 0 5% 0;
