@@ -5,19 +5,19 @@ shopt -s nullglob
 # ─── Configuration ────────────────────────────────────────────────────────────
 
 # Heights you want for the Big Matrix GIFs → MP4s
-BM_HEIGHTS=(400 720)
-BM_SRC_DIR="assets/spaghettiOs/webp/bigMatrix"
-OUTDIR_BM="assets/spaghettiOs/mp4/bigMatrix"
+TH_HEIGHTS=(450)
+TH_SRC_DIR="assets/thumbnails/"
+OUTDIR_TH="assets/thumbnails/mp4/"
 
-# Heights for the quad-matrix at the bottom
-QUAD_HEIGHTS=(400 750)
-QUAD_SRC_DIR="assets/spaghettiOs/webp/quadMatrix"
-OUTDIR_QUAD="assets/spaghettiOs/mp4/quadMatrix"
+# # Heights for the quad-matrix at the bottom
+# QUAD_HEIGHTS=(400 750)
+# QUAD_SRC_DIR="assets/spaghettiOs/webp/quadMatrix"
+# OUTDIR_QUAD="assets/spaghettiOs/mp4/quadMatrix"
 
-# Heights for the April Fools side-by-side GIFs
-APRIL_HEIGHTS=(400 720)
-APRIL_SRC_DIR="assets/spaghettiOs/webp/aprilFools"
-OUTDIR_APRIL="assets/spaghettiOs/mp4/aprilFools"
+# # Heights for the April Fools side-by-side GIFs
+# APRIL_HEIGHTS=(400 720)
+# APRIL_SRC_DIR="assets/spaghettiOs/webp/aprilFools"
+# OUTDIR_APRIL="assets/spaghettiOs/mp4/aprilFools"
 
 # ─── Helper to process a directory of .gif → .mp4 ───────────────────────────────
 process_dir() {

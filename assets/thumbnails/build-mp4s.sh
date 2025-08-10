@@ -9,7 +9,7 @@ BASEDIR="$(cd "$(dirname "$0")" && pwd)"
 SRC_DIR="$BASEDIR"
 
 # put your MP4s in ../mp4
-OUTPUT_DIR="$BASEDIR/../mp4"
+OUTPUT_DIR="$BASEDIR/mp4"
 
 # tweak to whatever widths you need
 WIDTHS=(800)
