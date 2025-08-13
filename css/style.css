@@ -320,7 +320,15 @@ li.whirlpool-logo{
   padding: 2.5%;
 }
 .project-img video{
-  margin-top: -1.4rem;
+  margin-top: -1.15rem;
+  /* margin-top: -4rem; */
+  /* clamp(-1.4rem ) */
+}
+.project-div .beans-video{
+  margin-top: -.9rem;
+}
+.project-div .spaghettios-video{
+  margin-top: -.5rem;
 }
 .project-text {
   display: flex;
@@ -481,8 +489,16 @@ li.whirlpool-logo{
   }
 
   .project-img video{
-    margin: -3.45rem 0
+    margin: -5.85rem 0 0 0
   }
+
+  .project-div .beans-video{
+  margin-top: -5.7rem;
+}
+  .project-div .spaghettios-video{
+  margin-top: -4.75rem;
+}
+
   .project-text{
     padding: 3% 0 5% 0;
     
@@ -500,6 +516,34 @@ li.whirlpool-logo{
 
 }
 
+@media (max-width: 1000px) {
+  .project-img video{
+    margin: -5.25rem 0 0 0
+  }
+  .project-div .beans-video{
+  margin-top: -4.65rem;
+}
+.project-div .spaghettios-video{
+  margin-top: -3.75rem;
+}
+
+}
+   
+
+@media (max-width: 950px){
+     .project-img video{
+    margin: -3.75rem 0 0 0
+  }
+  .project-div .beans-video{
+  margin-top: -3.5rem;
+}
+.project-div .spaghettios-video{
+  margin-top: -2.5rem;
+}
+
+}
+
+
 @media (max-width: 850px){
 
   .logos-container{
@@ -508,13 +552,39 @@ li.whirlpool-logo{
   .material-symbols-outlined{
     visibility: collapse;
   }
- 
+   .project-img video{
+    margin: -3rem 0 0 0
+  }
+  .project-div .beans-video{
+    margin-top: -2.75rem;
+}
+  .project-div .spaghettios-video{
+    margin-top: -2rem;
+}
   
 }
 
 @media (max-width: 700px) {
-  
+     .project-img video{
+    margin: -1.5rem 0 0 0
+  }
+  .project-div .beans-video{
+  margin-top: -.9rem;
+}
+.project-div .spaghettios-video{
+  margin-top: -.5rem;
+}
 }
 
+@media (max-width: 600px) {
+     .project-img video{
+    margin: -1.15rem 0 0 0
+  }
+}
+@media (max-width: 500px){
+     .project-img video{
+    margin: -.95rem 0 0 0
+  }
+}
 
 /* Structural */
