@@ -323,6 +323,8 @@ li.whirlpool-logo{
   margin-top: -1.15rem;
   /* margin-top: -4rem; */
   /* clamp(-1.4rem ) */
+  width: 100%;
+  height: auto;
 }
 .project-div .beans-video{
   margin-top: -.9rem;
