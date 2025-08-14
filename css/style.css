@@ -548,6 +548,10 @@ li.whirlpool-logo{
 
 @media (max-width: 850px){
 
+  .intro-p {
+  font-size: var(--fs-5);
+  line-height: 1.35;
+  }
   .logos-container{
     width: 100%;
   }
@@ -591,6 +595,10 @@ li.whirlpool-logo{
 }
 
 @media (max-width: 600px) {
+  .intro-p {
+  font-size: var(--fs-3);
+  line-height: 1.35;
+  }
      .project-img video{
     margin: -1.15rem 0 0 0
   }
