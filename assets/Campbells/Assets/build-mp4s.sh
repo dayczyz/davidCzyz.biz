@@ -1,18 +1,24 @@
 #!/usr/bin/env bash
 set -euo pipefail
+shopt -s nullglob
 
-# ---- Config ----
-SRC_DIR="/Assets/"          # change if needed
-OUTPUT_DIR="/accurateMp4"    # change if needed
-WIDTHS=(1000)                        # add more widths if you like, e.g. (640 1000 1500)
-FPS="${FPS:-12}"                     # keep your current 12 fps; override with env if desired
-CRF="${CRF:-16}"                     # a bit stronger than 18 for flat art
-PRESET="${PRESET:-veryslow}"         # quality > speed; change to "slow" if needed
+# Resolve the folder this script lives in
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+# ---- Config (defaults; can be overridden at runtime) ----
+SRC_DIR="${SRC_DIR:-$SCRIPT_DIR}"          # default: this folder
+OUTPUT_DIR="${OUTPUT_DIR:-$SCRIPT_DIR/mp4}"# default: ./mp4 next to script
+WIDTHS=(1000)
+FPS="${FPS:-12}"
+CRF="${CRF:-16}"
+PRESET="${PRESET:-veryslow}"
 
 # x264 tuning to keep flat fills & linework crisp
 X264_PARAMS='colorprim=bt709:transfer=bt709:colormatrix=bt709:fullrange=off:aq-mode=3:aq-strength=1.10:chroma-qp-offset=-2:deblock=-1,-1'
 
 mkdir -p "$OUTPUT_DIR"
+echo "SRC_DIR=$SRC_DIR"
+echo "OUTPUT_DIR=$OUTPUT_DIR"
 
 for src in "$SRC_DIR"/*.gif; do
   [ -f "$src" ] || continue
