@@ -10,28 +10,42 @@ ROOT="$(pwd -P)"
 OUT_MP4_DIR="${OUT_MP4_DIR:-./mp4}"
 OUT_WEBM_DIR="${OUT_WEBM_DIR:-./webm}"
 
-# Use one or more heights; "orig" keeps source size
-# Examples when running:
+# Heights to produce. Use "orig" to keep source size.
+# Examples:
 #   HEIGHTS="400 720" ./encode-here.sh
 #   HEIGHTS="400 750" ./encode-here.sh
 #   HEIGHTS="orig"     ./encode-here.sh
 HEIGHTS=(${HEIGHTS:-orig})
 
-FPS="${FPS:-20}"                 # web-safe cadence you liked
+# Keep original playback speed (default). To force a FPS, set FORCE_FPS, e.g.:
+#   FORCE_FPS=20 ./encode-here.sh
+FORCE_FPS="${FORCE_FPS:-}"
+
+# H.264 (MP4) quality/speed
 CRF_H264="${CRF_H264:-16}"
 PRESET_H264="${PRESET_H264:-veryslow}"
 
-CRF_VP9="${CRF_VP9:-24}"         # lower = higher quality
+# VP9 (WEBM) quality/speed
+CRF_VP9="${CRF_VP9:-24}"          # lower = higher quality
 CPU_USED_VP9="${CPU_USED_VP9:-0}" # 0 = best quality (slow)
 TILE_COLS_VP9="${TILE_COLS_VP9:-2}"
 GOP_VP9="${GOP_VP9:-240}"
 
-# H.264 tuning — protect linework & the critical red
+# H.264 tuning — protects linework & your crucial red
 X264_PARAMS='colorprim=bt709:transfer=bt709:colormatrix=bt709:fullrange=off:aq-mode=3:aq-strength=1.10:chroma-qp-offset=-3:deblock=-1,-1'
 
 mkdir -p "$OUT_MP4_DIR" "$OUT_WEBM_DIR"
 
-# Build the shared color/scale filter; pass target height or "orig"
+# FPS handling: preserve source timing (VFR) by default; optionally force CFR.
+if [[ -n "$FORCE_FPS" ]]; then
+  FPS_OPTS_MP4=(-fps_mode cfr -r "$FORCE_FPS")
+  FPS_OPTS_WEBM=(-fps_mode cfr -r "$FORCE_FPS")
+else
+  FPS_OPTS_MP4=(-fps_mode vfr)
+  FPS_OPTS_WEBM=(-fps_mode vfr)
+fi
+
+# Shared color/scale filter; pass target height or "orig"
 vf_chain () {
   local H="$1"
   if [[ "$H" == "orig" ]]; then
@@ -52,11 +66,12 @@ encode_one () {
     local suffix=""
     [[ "$H" != "orig" ]] && suffix="-h$H"
 
-    # MP4
+    # MP4 (preserve timing unless FORCE_FPS set)
     local out_mp4="$OUT_MP4_DIR/${base}${suffix}.mp4"
     echo "→ MP4  $src  ${suffix:-@src}"
-    ffmpeg -v warning -y -r "$FPS" -i "$src" \
+    ffmpeg -v warning -y -i "$src" \
       -vf "$(vf_chain "$H")" \
+      "${FPS_OPTS_MP4[@]}" \
       -c:v libx264 -pix_fmt yuv420p -preset "$PRESET_H264" -crf "$CRF_H264" -tune animation \
       -x264-params "$X264_PARAMS" \
       -movflags +faststart -an \
@@ -66,8 +81,9 @@ encode_one () {
     # WEBM (VP9)
     local out_webm="$OUT_WEBM_DIR/${base}${suffix}.webm"
     echo "→ WEBM $src  ${suffix:-@src}"
-    ffmpeg -v warning -y -r "$FPS" -i "$src" \
+    ffmpeg -v warning -y -i "$src" \
       -vf "$(vf_chain "$H")" \
+      "${FPS_OPTS_WEBM[@]}" \
       -c:v libvpx-vp9 -pix_fmt yuv420p -b:v 0 -crf "$CRF_VP9" \
       -quality good -cpu-used "$CPU_USED_VP9" -row-mt 1 \
       -tile-columns "$TILE_COLS_VP9" -frame-parallel 0 -auto-alt-ref 1 -lag-in-frames 25 \
@@ -77,7 +93,7 @@ encode_one () {
   done
 }
 
-# Encode every GIF in *this* folder (no recursion, no path games)
+# Encode every GIF in *this* folder (no recursion)
 gifs=( ./*.gif )
 if (( ${#gifs[@]} == 0 )); then
   echo "No .gif files found in: $ROOT"

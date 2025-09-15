@@ -134,7 +134,7 @@ p{
 }
 .quad-matrix{
   margin-bottom: 0;
- 
+  width: 100%;
 }
 .spaghettiO_1 video,
 .big-matrix video,
@@ -146,7 +146,7 @@ p{
   object-fit: contain;
 }
 .quad-matrix video{
-  margin-top: var(--row-gap)
+  margin-top: var(--row-gap);
 }
 
 /* .big-matrix .row .slide img, */
@@ -166,7 +166,11 @@ p{
   display: flex;
   flex-direction: column;
 }
-.spaghettiO_17{
+.spaghettiO_17,
+.spaghettiO_21 video,
+.spaghettiO_22 video,
+.spaghettiO_23 video,
+.spaghettiO_24 video{
   width: 100vw;
 }
 
