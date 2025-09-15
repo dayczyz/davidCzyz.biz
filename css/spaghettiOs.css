@@ -7,59 +7,29 @@
 }
 
 :root {
-  /* section gap controls the gap below each major section. Increase adds more space */
-  --section-gap: 2.5rem;
-
-  /* heading top gap */
+  --section-gap: 4.5rem;
   --heading-top-gap: 1rem;
-
-  /* heading bottom gap */
   --heading-bottom-gap: 1.5rem;
-  /* remove the gap between divs  */
-  --slide-gap: -.25rem;
 
-  /* matrix items gap */
+  /* remove the gap between divs  */
+  /* --slide-gap: -.25rem;  */
+
+  /* gap between matrix items */
   --row-gap: .25rem;
 
-  /* base row-height for big-matrix */
-  /* --row-height: 300px; */
-
- 
-  
-
   /* 1.250 - Major Third*/
-  /* p */
-  --fs-2: 1rem;
-  /* h1 */
-  --fs-8: 3.815rem;
-   /* h2 */
-  --fs-7: 3.052rem;
-  /* h3 */
-  --fs-6: 2.441rem;
-  /* h4 */
-  --fs-5: 1.953rem;
-  /* h5 */
-  --fs-4: 1.563rem;
-  /* h6 */
-  --fs-3: 1.25rem;
-  /* captioning */
-  --fs-1: .8rem;
+  --fs-1: .8rem;    /* captioning */
+  --fs-2: 1rem;     /* p */
+  --fs-3: 1.25rem;  /* h6 */
+  --fs-4: 1.563rem; /* h5 */
+  --fs-5: 1.953rem; /* h4 */
+  --fs-6: 2.441rem; /* h3 */
+  --fs-7: 3.052rem; /* h2 */
+  --fs-8: 3.815rem; /* h1 */
 }
 
-html{
-  /* font-size: 18px; */
-}
 body {
   font-family: Helvetica, sans-serif;
-  /* margin: 5%; */
-  /* was 10% */
-}
-
-
-
-html {
-    /* background-color: black; */
-    
 }
 
 img {
@@ -70,20 +40,22 @@ img {
 small {
   font-size: var(--fs-1);
   font-style: italic;
-  margin: auto;
   margin-top: var(--section-gap);
+  margin: auto;
   display: block;
+  text-align: center;
 }
 
 
 h2{
-  display: block;
   font-size: var(--fs-7);
   font-weight: 800;
-  margin: auto;
   margin-top: var(--heading-top-gap);
   margin-bottom: var(--heading-bottom-gap);
+  display: block;
+  text-align: center;
 }
+
 .o{
   color: #fbac25;
 }
@@ -96,14 +68,23 @@ p{
   line-height: 2;
 }
 
+/* Simple sections */
 .spaghettiO_2 {
   display: flex;
-  margin: var(--section-gap) 0;
+  margin-top: var(--section-gap);
 }
+
 .spaghettio-logo{
   width: 400px;
   margin: auto;
 }
+.spaghettiO_3 small{
+  margin: var(--heading-bottom-gap)
+}
+.spaghettiO_16 {
+  margin-top: 2rem;
+}
+
 
 .big-matrix-wrapper,
 .af-matrix-wrapper,
@@ -112,82 +93,64 @@ p{
   margin: 0
 
 }
-.big-matrix,
-.af-matrix{
-  flex-direction: row;
-  margin-bottom: var(--section-gap);
-}
 
-
+/* Shared row styling for all matrix's  */
 .big-matrix .row,
-.af-matrix .row:nth-child(2),
+.af-matrix .row,
 .quad-matrix .row{
-  flex: 1;
   display: flex;
   gap: var(--row-gap);
-  margin-bottom: var(--row-gap);
   width: 100%;
+  margin-bottom: var(--row-gap);
 }
+
+/* small tweak for quad-matrix */
 .quad-matrix .row{
  margin-bottom: 0;
  
 }
-.quad-matrix{
-  margin-bottom: 0;
-  width: 100%;
-}
+
+
+/* Video defaults (non Big-Matrix)  */
 .spaghettiO_1 video,
-.big-matrix video,
+/* .big-matrix video, */
 .af-matrix video,
 .quad-matrix video{
+  width: 100%;
   max-width: 100%;
-  /* height: auto; */
+  height: auto;
   display: block;
   object-fit: contain;
 }
-.quad-matrix video{
+
+/* .quad-matrix video{
   margin-top: var(--row-gap);
+} */
+.spaghettiO_1 video,   /* header graphic */
+.spaghettiO_7 video,   /* big-matrix row 2 left*/
+.spaghettiO_8 video,   /* big-matrix row 2 right */
+.spaghettiO_18 video,  /* AF */
+.spaghettiO_19 video,  /* AF */
+.spaghettiO_21 video,  /* quad */
+.spaghettiO_22 video,  /* quad */
+.spaghettiO_23 video,  /* quad */
+.spaghettiO_24 video { /* quad */
+  width: 100vw;  
 }
+/* BIG MATRIX (scoped) */
 
-/* continue resizing images to 720 px height for the entire matrix so that they have more width to take up and can act responsively.  continue */
- 
-
-.spaghettiO_14,
-.spaghettiO_16,
-.spaghettiO_20{
+.big-matrix {
   display: flex;
-  flex-direction: column;
+  flex-direction: column; /* rows stack */
+  margin-bottom: var(--section-gap);
 }
-
-
-/* header graphic */
-.spaghettiO_1 video,
-/* row 2 of big-matrix */
-
-.spaghettiO_7 video,
-.spaghettiO_8 video,
-
-.spaghettiO_17,
-.spaghettiO_18 video,
-.spaghettiO_19 video,
-.spaghettiO_21 video,
-.spaghettiO_22 video,
-.spaghettiO_23 video,
-.spaghettiO_24 video{
-  width: 100vw;
-  
-}
-
-
-/* ==== BIG MATRIX ONLY (keeps your other 100vw rules intact) ==== */
-.big-matrix { display: flex; flex-direction: column; }
 
 /* rows stretch tiles to a uniform row height */
 .big-matrix .row {
-  display: flex;
+  align-items: stretch;
+  /* display: flex; */
   gap: var(--row-gap);
   width: 100%;
-  align-items: stretch;
 }
 
 /* tiles share the row width by weight and take the row height */
@@ -205,6 +168,7 @@ p{
   object-fit: cover;        /* fill without gutters (crop if needed) */
   max-width: none;
 }
+
 
 /* ---------- Row-specific layout ---------- */
 
@@ -227,3 +191,19 @@ p{
 .big-matrix .r4 .slide:nth-child(2) { --w: 1; }
 
 
+/* AF matrix */
+.af-matrix {
+  margin-bottom: var(--section-gap);
+}
+#static-april-fools{
+ margin: 0;
+}
+
+/* Quad matrix */
+.quad-matrix{
+  width: 100%;
+  margin-bottom: 0;
+}
+.quad-matrix video {
+  margin-top: var(--row-gap);
+}
