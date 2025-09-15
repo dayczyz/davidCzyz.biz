@@ -16,14 +16,10 @@
   /* remove the gap between divs  */
   --slide-gap: -.25rem;
 
-
-
-
   --max-width: 1200px;
   --gutter-min: 2rem;
   --gutter-max: 5rem;
  
-
   /* p */
   --fs-2: 1rem;
   /* h1 */
@@ -42,20 +38,8 @@
   --fs-1: .9rem;
 }
 
-html{
-  /* font-size: 18px; */
-}
 body {
   font-family: Helvetica, sans-serif;
-  /* margin: 5%; */
-  /* was 10% */
-}
-
-
-
-html {
-    /* background-color: black; */
-    
 }
 
 img {
@@ -71,7 +55,6 @@ small {
   display: block;
 }
 
-
 h2{
   display: block;
   font-size: var(--fs-7);
@@ -80,7 +63,6 @@ h2{
   margin-top: var(--heading-top-gap);
   margin-bottom: var(--heading-bottom-gap);
 }
-
 
 p{
   padding: 0 4rem 2rem 4rem;
@@ -117,12 +99,6 @@ p{
   border-bottom: 2px solid black;
 }
 
-/* .side-by-side{
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  
-} */
 .graphic {
   width: 100%;
 }

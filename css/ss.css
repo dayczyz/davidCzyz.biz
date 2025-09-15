@@ -31,30 +31,14 @@
   --fs-1: .9rem;
 }
 
-html{
-  /* font-size: 18px; */
-}
 body {
   font-family: Helvetica, sans-serif;
-  /* margin: 5%; */
-  /* was 10% */
 }
-
-
-
-html {
-    /* background-color: black; */
-    
-}
-
-
 
 img {
   width: 100%;
   height: auto;
-  
 }
-
 
 .slide{
   margin-top: var(--slide-gap);
@@ -63,6 +47,7 @@ img {
 .selah2 {
   height: auto;
 }
+
 .selah2 p{
   padding: 4rem;
   max-width: 1000px;

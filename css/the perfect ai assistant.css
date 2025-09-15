@@ -16,9 +16,6 @@
   /* remove the gap between divs  */
   --slide-gap: -.25rem;
 
-
-
-
   --max-width: 1000px;
   --gutter-min: 2rem;
   --gutter-max: 5rem;
@@ -43,12 +40,10 @@
 }
 
 html{
-  /* font-size: 18px; */
   background-color: #0000FE;
 }
 body {
   font-family: Helvetica, sans-serif;
-  
 }
 
 .site-header{
@@ -56,7 +51,6 @@ body {
   margin-left: 50%;
   transform: translateX(-50%);
 }
-
 
 .container {
   max-width: var(--max-width);
@@ -74,7 +68,6 @@ body {
   width: 100%;
   height: auto;
   display: block;
-
 }
 
 .ai1 img {

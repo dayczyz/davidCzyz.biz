@@ -42,12 +42,8 @@
   --fs-1: .9rem;
 }
 
-html{
-  /* font-size: 18px; */
-}
 body {
   font-family: Helvetica, sans-serif;
-  
 }
 
 .site-header{
@@ -55,7 +51,6 @@ body {
   margin-left: 50%;
   transform: translateX(-50%);
 }
-
 
 .beans-header img{
   display: block;
@@ -68,11 +63,6 @@ body {
   width: 100%;
   margin: 0 auto;
   padding: 0 1rem;
-  /* padding: 0 clamp(
-    var(--gutter-min),
-    5vw,
-    var(--gutter-max)
-  ); */
 }
 
 .container img{
@@ -97,15 +87,10 @@ margin-bottom: var(--graphic-gap)
   margin-bottom: var(--section-gap ) 
 }
 
-
-
 .beans-logo img{
   margin: 0 auto;
-
-
   max-width: 225px;
 }
-
 
 .beans-intro p{
   line-height: 2;
