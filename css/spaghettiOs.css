@@ -207,3 +207,11 @@ p{
 .quad-matrix video {
   margin-top: var(--row-gap);
 }
+
+
+/* give paragraphs more breathing room on mobile */
+@media (max-width: 1000px) {
+  p{
+    margin-bottom: 2rem;
+  }
+}
