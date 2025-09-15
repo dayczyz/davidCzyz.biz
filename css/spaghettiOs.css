@@ -120,7 +120,7 @@ p{
 
 
 .big-matrix .row,
-.af-matrix .row,
+.af-matrix .row:nth-child(2),
 .quad-matrix .row{
   flex: 1;
   display: flex;
@@ -149,14 +149,6 @@ p{
   margin-top: var(--row-gap);
 }
 
-/* .big-matrix .row .slide img, */
-/* .af-matrix .row .slide 
-{
-  display: block;
-  width: 100%;
-  height: 100%;
-} */
-
 /* continue resizing images to 720 px height for the entire matrix so that they have more width to take up and can act responsively.  continue */
  
 
@@ -168,8 +160,9 @@ p{
 }
 
 
-
+/* header graphic */
 .spaghettiO_1 video,
+/* row 2 of big-matrix */
 
 .spaghettiO_7 video,
 .spaghettiO_8 video,
@@ -184,4 +177,53 @@ p{
   width: 100vw;
   
 }
-/* .r4 > .slide:first-child { flex: 1 1 0; }  */
+
+
+/* ==== BIG MATRIX ONLY (keeps your other 100vw rules intact) ==== */
+.big-matrix { display: flex; flex-direction: column; }
+
+/* rows stretch tiles to a uniform row height */
+.big-matrix .row {
+  display: flex;
+  gap: var(--row-gap);
+  width: 100%;
+  align-items: stretch;
+}
+
+/* tiles share the row width by weight and take the row height */
+.big-matrix .row .slide {
+  flex: var(--w, 1) 1 0;   /* weight; override per row below */
+  min-width: 0;
+  height: var(--rowH, 22vw); /* row height scales with viewport width */
+}
+
+/* video fills its tile, preserves aspect; no white space */
+.big-matrix .row .slide > video {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;        /* fill without gutters (crop if needed) */
+  max-width: none;
+}
+
+/* ---------- Row-specific layout ---------- */
+
+/* Row 1: three equal tiles */
+/* Row 1 weights: 1 | 2 | 1 */
+.big-matrix .r1 .slide:nth-child(1) { --w: 1; }
+.big-matrix .r1 .slide:nth-child(2) { --w: 2; }
+.big-matrix .r1 .slide:nth-child(3) { --w: 1; }
+
+
+/* Row 3: wide + narrow + wide => 2 : 1 : 2 */
+.big-matrix .r3 { --rowH: 18vw; }                 /* tune to match comp */
+.big-matrix .r3 .slide:nth-child(1),
+.big-matrix .r3 .slide:nth-child(3) { --w: 2; }
+.big-matrix .r3 .slide:nth-child(2) { --w: 1; }
+
+/* Row 4: two-up equal */
+.big-matrix .r4 { --rowH: 32vw; }                 /* tune to match comp */
+.big-matrix .r4 .slide:nth-child(1) { --w: 2; }
+.big-matrix .r4 .slide:nth-child(2) { --w: 1; }
+
+
