@@ -244,12 +244,6 @@ li.whirlpool-logo{
 }
 
 
-/* replaced with svg logos */
-/* .logo span{
-  color:black;
-  font-weight: 600;
-  font-size: var(--fs-3)
-} */
 .contact-container {
   max-width: 50%;
   display: grid;
@@ -350,13 +344,7 @@ li.whirlpool-logo{
   padding: 0px;top: -4px;left: 7px;
   
 }
-/* .material-symbols-outlined.project-icon.arrow{
-  margin: 0rem;
-  color: black;
-  font-size: 1rem;
-  margin-top: -.3rem;
-  padding-left: .25rem;
-} */
+
 
 /* Beans and Brews thumbnail */
 .beansAndBrew{
@@ -401,8 +389,6 @@ li.whirlpool-logo{
 
    /* spacing between projects on mobile */
    --project-gap: 2rem;
-  
- 
   }
 
   .header-graphic{
@@ -421,8 +407,7 @@ li.whirlpool-logo{
   padding-top: .25rem;
   }
   /* diamond */
-  /* li.logo-row{
-    margin-top: -.25rem;} */
+
   
   /* smiley */
   .material-symbols-outlined.satisfied{
@@ -477,12 +462,6 @@ li.whirlpool-logo{
   /* adjust the min-height to change the limit between projects.  */
   .project-div{
     width: 100%;
-    /* 40 */
-    /* height: 40vh; */
-    /* 330 */
-    /* min-height: 400px;
-    max-height: 500px; */
-    /* margin-bottom: var(--project-gap) */
   }
   /* increasing max-height allows the sequential image to fill the space left by the div above. Change the vh height if you want a wider aspect ratio like David's sketch.  */
   .project-img{
@@ -608,5 +587,3 @@ li.whirlpool-logo{
     margin: -.95rem 0 0 0
   }
 }
-
-/* Structural */
