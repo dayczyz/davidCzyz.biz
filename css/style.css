@@ -347,7 +347,7 @@ li.whirlpool-logo{
 
 
 /* Beans and Brews thumbnail */
-.beansAndBrew{
+.beansAndBrew {
   outline: 20px solid #f78000;
   outline-offset: -20px;
 }
@@ -520,6 +520,9 @@ li.whirlpool-logo{
 }
 .project-div .spaghettios-video{
   margin-top: -2.5rem;
+}
+.beansAndBrew{
+  
 }
 
 }
