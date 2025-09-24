@@ -205,6 +205,7 @@ h6{
   object-fit: contain;
 }
 
+
 /* .quad-matrix video{
   margin-top: var(--row-gap);
 } */
@@ -308,6 +309,11 @@ h6{
 }
 #static-april-fools{
  margin: 0;
+}
+#omoji-april-fools{
+  display: block;
+  height: auto;
+  margin-bottom: var(--row-gap)
 }
 
 /* Quad matrix */
