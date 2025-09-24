@@ -7,10 +7,17 @@
 }
 
 :root {
+ 
   --section-gap: 4.5rem;
+  
+  --max-width: 1200px;
+
+  --text-lr-padding: 5.25rem;
   --heading-top-gap: 1rem;
   --heading-bottom-gap: 1.5rem;
-  --max-width: 1200px;
+  --h6-top-padding: 7rem;
+  --h6-bottom-padding: 1rem;
+  --p-bottom-padding: 3rem;
   /* remove the gap between divs  */
   /* --slide-gap: -.25rem;  */
 
@@ -18,18 +25,22 @@
   --row-gap: .25rem;
 
   /* 1.250 - Major Third*/
-  --fs-1: .8rem;    /* captioning */
+  --fs-1: .75rem;    /* captioning */
   --fs-2: 1rem;     /* p */
   --fs-3: 1.25rem;  /* h6 */
   --fs-4: 1.563rem; /* h5 */
   --fs-5: 1.953rem; /* h4 */
   --fs-6: 2.441rem; /* h3 */
-  --fs-7: 3.052rem; /* h2 */
+  --fs-7: clamp(2.75rem, 6.75vw + .6rem, 6.75rem); /* h2 */
   --fs-8: 3.815rem; /* h1 */
 }
 
-body {
+html{
+  font-size: 16px;
+}
+body  {
   font-family: Helvetica, sans-serif;
+  font-size: 16px;
 }
 
 .page-wrapper-ss{
@@ -45,35 +56,91 @@ img {
   height: auto;
 }
 
+.text{
+margin: 0 var(--text-lr-padding);
+}
+
+@media (max-width: 800px){
+  :root {
+    --text-lr-padding: 2.5rem;
+  }
+}
+
+p{
+  font-weight: 300;
+  padding-bottom: var(--p-bottom-padding);
+  font-size: var()
+}
+
 small {
   font-size: var(--fs-1);
-  font-style: italic;
-  margin-top: var(--section-gap);
-  margin: auto;
+  font-weight: 300;
   display: block;
-  text-align: center;
+  text-align: left;
+  line-height: 2;
 }
 
 
 h2{
   font-size: var(--fs-7);
-  font-weight: 800;
-  margin-top: var(--heading-top-gap);
+  font-weight: 700;
+  text-wrap-style: balance;
+  word-break:break-word;
   margin-bottom: var(--heading-bottom-gap);
   display: block;
-  text-align: center;
+  text-align: left;
+  text-transform: uppercase;
+  letter-spacing: -.025em;
+  line-height: .875;
+  word-spacing: .125em;
+}
+h6{
+  text-transform: uppercase;
+  padding-top: var(--h6-top-padding);
+  padding-bottom: var(--h6-bottom-padding);
+  font-size: var(--fs-2);
+  font-weight: 300;
+}
+
+p,
+h6{
+  line-height: 1.5;
 }
 
 .o{
-  color: #fbac25;
+  color: RGB(255 203 0);
 }
 
-p{
-  padding: 0 4rem 2rem 4rem;
-  max-width: 1200px;
-  margin: auto;
-  font-size: var(--fs-2);
-  line-height: 2;
+.yellow{
+  color: RGB(255 203 0);
+  font-weight: 900;
+  letter-spacing: .05em;
+  
+}
+.yellow:nth-of-type(2){
+  letter-spacing: 0;
+}
+.bold{
+  font-weight: 900;
+  font-style: italic;
+}
+
+.space{
+  padding-left: .05em;
+}
+.tm{
+  font-weight: 500;
+  font-size: clamp(2rem, 3.75vw + .6rem, 4rem);
+  position: relative;
+  vertical-align: super;
+  top: 3.5px;
+  left: -2px;
+}
+.italic {
+  font-style: italic;
+}
+.haters {
+  font-weight: 600;
 }
 
 /* Simple sections */
@@ -83,12 +150,19 @@ p{
 }
 
 .spaghettio-logo{
-  width: 400px;
+  width: 350px;
   margin: auto;
+  padding-top: 2rem;
 }
-.spaghettiO_3 small{
-  margin: var(--heading-bottom-gap)
+.graphic{
+  display: flex;
+  margin-top: 6.5rem;
 }
+.spoon-divider{
+  width: clamp(150px, 20vw + 25px, 275px);
+  margin: 0 auto;
+}
+
 .spaghettiO_16 {
   margin-top: 2rem;
 }
