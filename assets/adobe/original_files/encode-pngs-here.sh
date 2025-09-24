@@ -18,7 +18,7 @@ command -v ffmpeg >/dev/null || { echo "ERROR: ffmpeg not found (brew install ff
 # Master = true lossless (banding-free). Variants = near-lossless (very high quality).
 SIZES=(500 640 800 1100)
 FF_LOSSLESS=(-c:v libwebp -lossless 1 -compression_level 6 -quality 100 -alpha_quality 100)
-FF_NEAR=(-c:v libwebp -lossless 0 -compression_level 6 -q:v 92 -alpha_quality 100)
+FF_NEAR=(-c:v libwebp -lossless 0 -compression_level 6 -q:v 100 -alpha_quality 100)
 
 encode_one () {
   local src="$1"
