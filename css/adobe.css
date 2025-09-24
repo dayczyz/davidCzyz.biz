@@ -100,3 +100,20 @@ img {
 .aaa15 {
   margin-bottom: var(--section-gap)
 }
+
+
+@media (max-width: 950px){
+  .intro-text p{
+    padding: 0 6rem;
+  }
+}
+@media (max-width: 850px){
+  .intro-text p {
+    padding: 0 4.5rem;
+  }
+}
+@media (max-width: 750px){
+  .intro-text p {
+    padding: 0 3rem;
+  }
+}
