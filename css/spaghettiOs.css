@@ -12,7 +12,7 @@
   
   --max-width: 1200px;
 
-  --text-lr-padding: 5.25rem;
+  --text-lr-padding: 4.5rem;
   --heading-top-gap: 1rem;
   --heading-bottom-gap: 1.5rem;
   --h6-top-padding: 7rem;
@@ -31,7 +31,7 @@
   --fs-4: 1.563rem; /* h5 */
   --fs-5: 1.953rem; /* h4 */
   --fs-6: 2.441rem; /* h3 */
-  --fs-7: clamp(2.75rem, 6.75vw + .6rem, 6.75rem); /* h2 */
+  --fs-7: clamp(2.75rem, 6.75vw + .6rem, 6.25rem); /* h2 */
   --fs-8: 3.815rem; /* h1 */
 }
 
@@ -68,7 +68,7 @@ margin: 0 var(--text-lr-padding);
 @media (max-width: 600px){
   :root {
     --text-lr-padding: 1.5rem;
-    --fs-7: clamp(5rem, 6.75vw + .6rem, 6.75rem);
+    --fs-7: 2.6rem;
   }
 }
 
