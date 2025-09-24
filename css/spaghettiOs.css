@@ -68,7 +68,7 @@ margin: 0 var(--text-lr-padding);
 @media (max-width: 600px){
   :root {
     --text-lr-padding: 1.5rem;
-    --fs-7: clamp(2.5rem, 6.75vw + .6rem, 6.75rem);
+    --fs-7: clamp(5rem, 6.75vw + .6rem, 6.75rem);
   }
 }
 
