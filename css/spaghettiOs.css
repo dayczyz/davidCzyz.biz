@@ -10,7 +10,7 @@
   --section-gap: 4.5rem;
   --heading-top-gap: 1rem;
   --heading-bottom-gap: 1.5rem;
-
+  --max-width: 1200px;
   /* remove the gap between divs  */
   /* --slide-gap: -.25rem;  */
 
@@ -32,6 +32,14 @@ body {
   font-family: Helvetica, sans-serif;
 }
 
+.page-wrapper-ss{
+  max-width: var(--max-width);
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 clamp(
+    0, 5vw, var(--gutter-max)
+  );
+}
 img {
   width: 100%;
   height: auto;
@@ -154,11 +162,14 @@ p{
 }
 
 /* tiles share the row width by weight and take the row height */
-.big-matrix .row .slide {
+.big-matrix .slide {
   flex: var(--w, 1) 1 0;   /* weight; override per row below */
   min-width: 0;
   height: var(--rowH, 22vw); /* row height scales with viewport width */
 }
+
+
+
 
 /* video fills its tile, preserves aspect; no white space */
 .big-matrix .row .slide > video {
@@ -169,6 +180,32 @@ p{
   max-width: none;
 }
 
+/* this keeps the videos from continuing to grow in their containers despite the max-width on the page */
+.big-matrix .r1 video,
+.big-matrix .r2 video{
+  max-height: 264px;
+}
+.big-matrix .r3 video{
+  max-height: 216px;
+}
+.big-matrix .r4 video{
+  max-height: 384px;
+}
+
+/* This prevents the slides from growing height wise despite the max page width of 1200px. Keeps the gutter size fixed once the page hits max-width */
+@media (min-width: 1200px){
+   .big-matrix .r1 .slide,
+   .big-matrix .r2 .slide{
+    height: 264px;
+}
+  .big-matrix .r3 .slide{
+    height: 216px;
+  }
+  .big-matrix .r4 .slide{
+    height: 384px;
+  }
+
+}
 
 /* ---------- Row-specific layout ---------- */
 
