@@ -51,3 +51,8 @@ img {
 .slide{
   margin-top: var(--slide-gap);
 }
+.aaa9,
+.aaa12,
+.aaa15 {
+  margin-bottom: var(--section-gap)
+}
