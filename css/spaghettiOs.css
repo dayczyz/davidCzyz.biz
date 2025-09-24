@@ -36,11 +36,11 @@
 }
 
 html{
-  font-size: 16px;
+  /* font-size: 16px; */
 }
 body  {
   font-family: Helvetica, sans-serif;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .page-wrapper-ss{
@@ -65,11 +65,17 @@ margin: 0 var(--text-lr-padding);
     --text-lr-padding: 2.5rem;
   }
 }
+@media (max-width: 600px){
+  :root {
+    --text-lr-padding: 1.5rem;
+    --fs-7: clamp(2.5rem, 6.75vw + .6rem, 6.75rem);
+  }
+}
 
 p{
   font-weight: 300;
   padding-bottom: var(--p-bottom-padding);
-  font-size: var()
+  font-size: var(--fs-2)
 }
 
 small {
@@ -94,6 +100,7 @@ h2{
   line-height: .875;
   word-spacing: .125em;
 }
+
 h6{
   text-transform: uppercase;
   padding-top: var(--h6-top-padding);
@@ -133,8 +140,11 @@ h6{
   font-size: clamp(2rem, 3.75vw + .6rem, 4rem);
   position: relative;
   vertical-align: super;
-  top: 3.5px;
+  top: 6px;
   left: -2px;
+}
+.af-heading{
+  line-height: .8;
 }
 .italic {
   font-style: italic;
