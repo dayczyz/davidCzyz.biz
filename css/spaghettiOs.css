@@ -59,6 +59,12 @@ img {
 .text{
 margin: 0 var(--text-lr-padding);
 }
+@media (max-width: 850px){
+  :root {
+    --text-lr-padding: 4rem;
+    --fs-7: 3.025rem;
+  }
+}
 
 @media (max-width: 800px){
   :root {
