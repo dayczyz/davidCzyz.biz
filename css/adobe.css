@@ -69,7 +69,12 @@ span{
 html {
     background-color: black; 
 }
-
+.black-background{
+  background-color: black;
+}
+.white-background{
+  background-color: white;
+}
 img {
   width: 100%;
   height: auto;
