@@ -71,7 +71,7 @@ a {
 }
 
 span {
-  color: rgb(240, 183, 181);
+
 }
 h1 {
   font-size: var(--fs-8) 
@@ -96,7 +96,16 @@ h6{
 p {
   font-size: var(--fs-1);
 }
-
+/* Span styles */
+.bold{
+  font-weight:900;
+}
+.italic{
+  font-style: italic;
+}
+.serif{
+  font-family: 'Times New Roman', Times, serif;
+}
 
 /* Material icons base */
 .material-symbols-outlined {
@@ -108,7 +117,8 @@ p {
   line-height: 1;
   display: inline-block;
   position: relative;
-  margin-left: calc(-1 * var(--icon-gutter))
+  margin-left: calc(-1 * var(--icon-gutter));
+  color: rgb(240, 183, 181);
 }
 
 /* David logo header */
@@ -136,7 +146,7 @@ p {
 /* The intro paragraph is being treated as h2 */
 .intro-p {
   font-size: var(--fs-7);
-  line-height: 1.35;
+  line-height: 1.25;
   margin: 0;
 }
 .p-link {
