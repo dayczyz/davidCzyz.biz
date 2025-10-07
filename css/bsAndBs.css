@@ -25,7 +25,7 @@
  
 
   /* p */
-  --fs-2: 1rem;
+  --fs-2: 1.25rem;
   /* h1 */
   --fs-8: 2.027rem;
    /* h2 */
@@ -58,14 +58,14 @@ body {
   height: auto;
 }
 
-.container {
+.sub-header-container {
   max-width: var(--max-width);
   width: 100%;
   margin: 0 auto;
   padding: 0 1rem;
 }
 
-.container img{
+.sub-header-container img{
   width: 100%;
   height: auto;
   display: block;
@@ -93,8 +93,12 @@ margin-bottom: var(--graphic-gap)
 }
 
 .beans-intro p{
-  line-height: 2;
+  line-height: 1.5;
+  font-size: var(--fs-2);
   text-wrap: wrap;
+  color: rgb(28 28 28)
+  
+
 }
 
 .side-by-side{
