@@ -123,6 +123,12 @@ margin-bottom: var(--graphic-gap)
 
 }
 
+@media (max-width: 850px){
+  :root {
+    /* p */
+  --fs-2: 1.125rem;;
+  }
+}
 
 @media (max-width: 768px){
   :root {
