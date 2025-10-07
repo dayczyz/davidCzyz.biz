@@ -502,7 +502,10 @@ li.whirlpool-logo{
   .project-text span.project-arrow {
   margin: 0;
   padding: 0px;top: -1px;left: 7px;
-  
+}
+
+.beansAndBrew{
+  outline: none;
 }
 
 }
@@ -560,6 +563,7 @@ li.whirlpool-logo{
     margin-top: -2rem;
 }
   
+
 }
 
 @media (max-width: 775px) {
