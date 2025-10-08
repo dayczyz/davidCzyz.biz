@@ -66,7 +66,7 @@
   display: inline-block;
   /* Your defaults */
   font-size: 32px;
- color: HSLA(0 71 65 / 80%);
+ color: HSLA(31 98 47 / 80%);
   
   font-variation-settings: 
     'FILL' 0,   /* 0 outline, 1 filled */
@@ -75,7 +75,7 @@
     'opsz' 40;
 }
 .material-symbols-outlined:hover{
-  color: HSLA(0 71 65 / 95%);
+  color: HSLA(31 98 47 / 95%);
 }
 
 body {

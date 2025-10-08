@@ -79,7 +79,7 @@ body  {
   font-size: 18px;
 }
 
-.page-wrapper-ss{
+.images-section-wrapper{
   max-width: var(--max-width);
   width: 100%;
   margin: 0 auto;
@@ -196,6 +196,9 @@ h6{
 }
 
 /* Simple sections */
+#header-div{
+  background-color: RGB(255 1 0);
+}
 .spaghettiO_2 {
   display: flex;
   margin-top: var(--section-gap);
