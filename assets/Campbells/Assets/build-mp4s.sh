@@ -1,42 +1,76 @@
 #!/usr/bin/env bash
+# convert-gif-to-mp4.sh
+# Converts ONLY .gif files located in the SAME folder as this script.
+# Outputs both web-safe (yuv420p) and high-fidelity (yuv444p) MP4s per width.
+
 set -euo pipefail
 shopt -s nullglob
 
-# Resolve the folder this script lives in
+# --- lock to this script's directory ---
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+cd "$SCRIPT_DIR"
 
-# ---- Defaults (can be overridden at runtime) ----
-SRC_DIR="${SRC_DIR:-$SCRIPT_DIR}"            # where your .gif files are
-OUTPUT_DIR="${OUTPUT_DIR:-$SCRIPT_DIR/mp4}"  # outputs go here
-WIDTHS=(1200)                                # e.g., (640 1000 1500)
-FPS="${FPS:-20}"                             # Web-safe preset uses 20 fps
-CRF="${CRF:-16}"                             # stronger than 18 for flat art
-PRESET="${PRESET:-veryslow}"                 # quality > speed
+# --- settings you can tweak ---
+WIDTHS=(1200)              # e.g., (640 1000 1500)
+FPS="${FPS:-20}"           # GIF-like cadence
+CRF_420="${CRF_420:-16}"   # lower = higher quality (typical 16–20)
+CRF_444="${CRF_444:-12}"   # keep 444 extra clean
+PRESET="${PRESET:-slow}"   # slow/veryslow if you can afford it
 
-# x264 tuning to keep flat fills & linework crisp
-X264_PARAMS='colorprim=bt709:transfer=bt709:colormatrix=bt709:fullrange=off:aq-mode=3:aq-strength=1.10:chroma-qp-offset=-2:deblock=-1,-1'
+OUT_DIR="$SCRIPT_DIR/mp4"
+mkdir -p "$OUT_DIR"
 
-mkdir -p "$OUTPUT_DIR"
-echo "SRC_DIR=$SRC_DIR"
-echo "OUTPUT_DIR=$OUTPUT_DIR"
-echo "FPS=$FPS  CRF=$CRF  PRESET=$PRESET"
+# Conservative x264 knobs to protect flats/edges; signal bt709 correctly
+X264_COMMON="colorprim=bt709:transfer=bt709:colormatrix=bt709:videoformat=component:range=limited:aq-mode=3:aq-strength=1.1:deblock=-1,-1"
 
-for src in "$SRC_DIR"/*.gif; do
+echo "Converting .gif files in: $SCRIPT_DIR"
+echo "Output: $OUT_DIR"
+echo "Widths: ${WIDTHS[*]}  FPS=$FPS  PRESET=$PRESET"
+
+command -v ffmpeg >/dev/null 2>&1 || { echo "ffmpeg not found"; exit 1; }
+
+for src in "$SCRIPT_DIR"/*.gif; do
   [ -f "$src" ] || continue
   base="$(basename "$src" .gif)"
   for w in "${WIDTHS[@]}"; do
-    out="$OUTPUT_DIR/${base}-${w}.mp4"
-    echo "→ Generating $out from $src at ${w}px…"
+    out420="$OUT_DIR/${base}-${w}-420.mp4"
+    out444="$OUT_DIR/${base}-${w}-444.mp4"
 
+    echo "→ $base @ ${w}px (420 + 444)"
+
+    # Pipeline notes:
+    # 1) Read GIF → RGB
+    # 2) Scale in RGB (Lanczos) to avoid chroma bleed on edges/flat fills
+    # 3) Convert to bt709 limited with error-diffusion dithering before YUV
+    # 4) For 420: format yuv420p; for 444: format yuv444p
+
+    # --- Web-safe 4:2:0 ---
     ffmpeg -v warning -y -i "$src" \
-      -vf "format=gbrp,\
-zscale=primariesin=bt709:transferin=bt709:rangein=pc:\
-primaries=bt709:transfer=bt709:range=limited,\
-scale=${w}:-2:flags=lanczos,fps=${FPS},format=yuv420p" \
-      -c:v libx264 -pix_fmt yuv420p -preset "$PRESET" -crf "$CRF" -tune animation \
-      -x264-params "$X264_PARAMS" \
-      -movflags +faststart -an \
+      -vf "format=gbrp, \
+           fps=${FPS}, \
+           scale=${w}:-2:flags=lanczos+accurate_rnd+full_chroma_int, \
+           zscale=primaries=bt709:transfer=bt709:range=limited:dither=error_diffusion, \
+           format=yuv420p" \
+      -c:v libx264 -preset "$PRESET" -crf "$CRF_420" -tune animation \
+      -x264-params "$X264_COMMON" \
+      -movflags +faststart \
+      -an \
       -color_primaries bt709 -color_trc bt709 -colorspace bt709 -color_range tv \
-      "$out"
+      "$out420"
+
+    # --- High-fidelity 4:4:4 (desktop-first) ---
+    ffmpeg -v warning -y -i "$src" \
+      -vf "format=gbrp, \
+           fps=${FPS}, \
+           scale=${w}:-2:flags=lanczos+accurate_rnd+full_chroma_int, \
+           zscale=primaries=bt709:transfer=bt709:range=limited:dither=error_diffusion, \
+           format=yuv444p" \
+      -c:v libx264 -preset "$PRESET" -crf "$CRF_444" -tune animation \
+      -pix_fmt yuv444p \
+      -x264-params "$X264_COMMON:profile=high444" \
+      -movflags +faststart \
+      -an \
+      -color_primaries bt709 -color_trc bt709 -colorspace bt709 -color_range tv \
+      "$out444"
   done
 done
