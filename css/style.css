@@ -358,8 +358,8 @@ li.whirlpool-logo{
 
 /* Beans and Brews thumbnail */
 .beansAndBrew {
-  outline: 20px solid #f78000;
-  outline-offset: -20px;
+  /* outline: 20px solid #f78000;
+  outline-offset: -20px; */
 }
 
 /* ---------------------- */
