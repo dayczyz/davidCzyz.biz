@@ -47,14 +47,14 @@
   left: 38px;
   border-radius: 50%;
   border: none;
-  background-color: HSLA(255 255 255 / 50%);
+  background-color: rgba(255 255 255 / .50);
   height: 75px;
   width: 75px;
   cursor: pointer;
   
 }
 .nav-button:hover{
-  background-color: HSLA(255 255 255/80%);
+  background-color: rgba(255 255 255/.5);
 }
 
 .material-symbols-outlined {
@@ -66,7 +66,7 @@
   display: inline-block;
   /* Your defaults */
   font-size: 32px;
- color: HSLA(31 98 47 / 80%);
+ color: rgba(237 124 2 / .8);
   
   font-variation-settings: 
     'FILL' 0,   /* 0 outline, 1 filled */
@@ -75,7 +75,7 @@
     'opsz' 40;
 }
 .material-symbols-outlined:hover{
-  color: HSLA(31 98 47 / 95%);
+  color: rgba(237 124 2 / .95);
 }
 
 body {
