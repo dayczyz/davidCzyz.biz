@@ -5,7 +5,7 @@
 
 :root {
   /* icon size increases / decreases the icon size. 0rem means it's native font size - 16.2px */
-  --icon-size: 0rem;
+  --icon-size: 0;
   
   /* icon gap pushes the rightmost element to the right this amount. icon stays stationary in the left margin  */
   --icon-gap: 0rem;
@@ -107,10 +107,25 @@ p {
   font-family: 'Times New Roman', Times, serif;
 }
 
-/* Material icons base */
+/* Material icons base
 .material-symbols-outlined {
   font-family: 'Material Symbols Outlined';
   font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  font-style: normal;
+  font-weight: normal;
+  font-size: var(--icon-size);
+  line-height: 1;
+  display: inline-block;
+  position: relative;
+  margin-left: calc(-1 * var(--icon-gutter));
+  color: rgb(240, 183, 181);
+  /* your axes */
+  /* font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+
+  color: rgb(240, 183, 181);
+} */
+
+.icon{
   font-style: normal;
   font-weight: normal;
   font-size: var(--icon-size);
@@ -137,9 +152,9 @@ p {
   column-gap: var(--icon-gap);
   margin-bottom: var(--section-gap);
 }
-.material-symbols-outlined.section-icon.subject{
+.subject{
   /* resolves the icon sitting too high */
-  padding-top: .25rem;
+  padding-top: .35rem;
    
 }
 
@@ -159,7 +174,6 @@ p {
 /* no change to the diamond icon */
 
 
-
 /* Client logos and contact */
 .clients-wrapper {
   display: flex;
@@ -173,9 +187,6 @@ p {
   /* 1st col is “visual only” (0 px), 2nd col is everything else  */
   grid-template-columns: var(--icon-size) 1fr;   /* --icon-size is 0 rem */
   column-gap: var(--icon-gap);                   /* keeps left column    */
-
-  
- 
 }
 
 
@@ -263,7 +274,8 @@ li.whirlpool-logo{
   padding-left: calc(1 * var(--icon-gutter))
 }
 /* Star icon */
-.material-symbols-outlined.section-logo.star{
+/* .material-symbols-outlined.section-logo.star */
+.stars-2 { 
   margin-left: 0;
   margin-left: calc(-1 * var(--icon-gutter));
   
@@ -325,8 +337,6 @@ li.whirlpool-logo{
 }
 .project-img video{
   margin-top: -1.15rem;
-  /* margin-top: -4rem; */
-  /* clamp(-1.4rem ) */
   width: 100%;
   height: auto;
 }
@@ -349,7 +359,8 @@ li.whirlpool-logo{
   display: flex;
 
 }
-.project-text span.project-arrow {
+/* .project-text span.project-arrow */
+.arrow-right { 
   margin: 0;
   padding: 0px;top: -4px;left: 7px;
   
@@ -406,12 +417,13 @@ li.whirlpool-logo{
   }
   /* icon adjustments */
   /* ------------------- */
-  .material-symbols-outlined.section-icon.subject{
+ .subject{
   /* resolves the icon sitting too high */
     padding-top: .75rem;
   }
   /* star */
-  .material-symbols-outlined.section-logo.star{
+  /* .material-symbols-outlined.section-logo.star */
+  .stars-2{
   margin-left: calc(-1 * var(--icon-gutter));
   position: relative;
   padding-top: .25rem;
@@ -420,7 +432,8 @@ li.whirlpool-logo{
 
   
   /* smiley */
-  .material-symbols-outlined.satisfied{
+  /* .material-symbols-outlined.satisfied */
+  .sentiment-satisfied{
     padding-top: .25rem;
   }
    
@@ -499,7 +512,8 @@ li.whirlpool-logo{
     font-size: var(--fs-2);
   }
 
-  .project-text span.project-arrow {
+  /* .project-text span.project-arrow  */
+  .arrow-right{
   margin: 0;
   padding: 0px;top: -1px;left: 7px;
 }
@@ -550,7 +564,8 @@ li.whirlpool-logo{
   .logos-container{
     width: 100%;
   }
-  .material-symbols-outlined{
+  .material-symbols-outlined,
+  .icon{
     visibility: collapse;
   }
    .project-img video{
