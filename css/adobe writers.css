@@ -31,6 +31,42 @@
   /* captioning */
   --fs-1: .9rem;
 }
+ .nav-button{
+  position:fixed;
+  top: 2rem;
+  left: 38px;
+  border-radius: 50%;
+  border: none;
+  background-color: HSLA(255 255 255 / 35%);
+  height: 75px;
+  width: 75px;
+  cursor: pointer;
+  
+}
+.nav-button:hover{
+  background-color: HSLA(255 255 255/80%);
+}
+
+.material-symbols-outlined {
+  padding: 12px;
+  font-family: 'Material Symbols Outlined';
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1;
+  display: inline-block;
+  /* Your defaults */
+  font-size: 32px;
+ color: HSLA(0 0 0 / 70%);
+  
+  font-variation-settings: 
+    'FILL' 0,   /* 0 outline, 1 filled */
+    'wght' 700, /* 100–700 */
+    'GRAD' 0,
+    'opsz' 40;
+}
+.material-symbols-outlined:hover{
+  color: HSLA(0 0 0 / 85%);
+}
 
 body {
   font-family: Helvetica, sans-serif;
