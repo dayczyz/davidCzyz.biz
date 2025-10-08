@@ -85,6 +85,9 @@ body {
   font-family: Helvetica, sans-serif;
   
 }
+p{
+  font-weight: 200;
+}
 /* ===================== */
 /* Removes the 2px lines between inline videos */
 .images-section-wrapper video,
@@ -140,13 +143,15 @@ body {
 .wp-heading,
 .wp-text{
   padding-bottom: var(--element-spacing);
-  line-height: 2;
+  line-height: 1.75;
 }
 
 .wp-heading {
-  font-size: var(--fs-5);
+  font-size: var(--fs-1);
   text-align: center;
-
+}
+.wp-text{
+  padding-top: 2rem;
 }
 
 
