@@ -152,10 +152,13 @@ img {
   .intro-text p {
     padding: 0 4.5rem;
   }
+  .file-diagram {
+    display: none;
+  }
 }
 @media (max-width: 750px){
   .intro-text p {
-    padding: 0 3rem;
+    padding: 0 2rem;
   }
  
 }

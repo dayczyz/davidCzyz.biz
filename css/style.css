@@ -133,7 +133,8 @@ p {
   display: inline-block;
   position: relative;
   margin-left: calc(-1 * var(--icon-gutter));
-  color: rgb(240, 183, 181);
+  /* color: rgb(240, 183, 181); */
+  color: rgb(245 183 205);
 }
 
 /* David logo header */
@@ -166,7 +167,8 @@ p {
 }
 .p-link {
   font-weight: 600;
-  color: rgb(240, 183, 181);
+  /* color: rgb(240, 183, 181); */
+  color: rgb(245 183 205);
 }
 
 
@@ -275,7 +277,8 @@ li.whirlpool-logo{
 }
 /* Star icon */
 /* .material-symbols-outlined.section-logo.star */
-.stars-2 { 
+.stars-2,
+.mail { 
   margin-left: 0;
   margin-left: calc(-1 * var(--icon-gutter));
   
@@ -423,7 +426,8 @@ li.whirlpool-logo{
   }
   /* star */
   /* .material-symbols-outlined.section-logo.star */
-  .stars-2{
+  .stars-2,
+  .mail{
   margin-left: calc(-1 * var(--icon-gutter));
   position: relative;
   padding-top: .25rem;
@@ -547,9 +551,6 @@ li.whirlpool-logo{
 }
 .project-div .spaghettios-video{
   margin-top: -2.5rem;
-}
-.beansAndBrew{
-  
 }
 
 }
