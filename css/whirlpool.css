@@ -159,7 +159,11 @@ p{
   .container{
     padding: 0;
   }
-  
+  @media (max-width: 850px){
+  .nav-button {
+    left: 20px;
+  }
+}
 
 }
 

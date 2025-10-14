@@ -150,4 +150,8 @@ body {
   height: auto;
 }
 
-@media (max-width: )
+@media (max-width: 850px){
+  .nav-button {
+    left: 20px;
+  }
+}
