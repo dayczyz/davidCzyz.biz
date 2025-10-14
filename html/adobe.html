@@ -42,9 +42,15 @@
 								muted
 								loop
 								playsinline
+								preload="auto"
+								poster="/assets/adobe/static/intro-poster.jpg"
 								width="100%"
-								height="auto"
-								src="/assets/adobe/mp4/1_Adobe_A_rotation_2-1936.mp4">
+								height="auto">
+								<!-- mobile first -->
+								<source src="/assets/adobe/mp4/1_Adobe_A_rotation_2-1000.mp4"> 
+								<!-- desktop -->
+								 <source src="/assets/adobe/mp4/1_Adobe_A_rotation_2-1936.mp4">
+								
 
 								<!-- fallback text -->
 								Your browser doesn't support HTML5 video.
