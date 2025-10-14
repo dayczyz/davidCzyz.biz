@@ -349,10 +349,10 @@ li.whirlpool-logo{
 .project-div .spaghettios-video{
   margin-top: -.5rem;
 }
-.project-text {
+.project-heading {
   display: flex;
   justify-content: space-between;
-  padding: 3% 0 10% 0;
+  padding: 3% 0 2% 0;
   font-weight: 600;
   font-size: var(--fs-2);
 }
@@ -360,7 +360,12 @@ li.whirlpool-logo{
 .project-name-and-arrow{
   justify-content: space-around;
   display: flex;
+}
 
+
+.info{
+  
+  font-size: var(--fs-2);
 }
 /* .project-text span.project-arrow */
 .arrow-right { 
@@ -368,6 +373,8 @@ li.whirlpool-logo{
   padding: 0px;top: -4px;left: 7px;
   
 }
+
+
 
 
 /* Beans and Brews thumbnail */

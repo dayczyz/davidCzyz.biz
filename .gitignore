@@ -6,3 +6,6 @@ assets/Whirlpool/raw_video/
 # Large raw video
 assets/Whirlpool/raw_video/
 *.mxf
+
+assets/Whirlpool/gif_to_mp4/
+*.mp4
