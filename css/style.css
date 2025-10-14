@@ -16,7 +16,7 @@
   --section-gap: 3.125rem;
 
   /* icon gutter controls the icon offset from the rightmost element */
-  --icon-gutter: 2.5rem;
+  --icon-gutter: 2.25rem;
 
   --project-gap: 1.5rem;
 
@@ -106,24 +106,12 @@ p {
 .serif{
   font-family: 'Times New Roman', Times, serif;
 }
+/* ======================= */
+/* ======================= */
+/* ICONS */
+/* ======================= */
+/* ======================= */
 
-/* Material icons base
-.material-symbols-outlined {
-  font-family: 'Material Symbols Outlined';
-  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-  font-style: normal;
-  font-weight: normal;
-  font-size: var(--icon-size);
-  line-height: 1;
-  display: inline-block;
-  position: relative;
-  margin-left: calc(-1 * var(--icon-gutter));
-  color: rgb(240, 183, 181);
-  /* your axes */
-  /* font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-
-  color: rgb(240, 183, 181);
-} */
 
 .icon{
   font-style: normal;
@@ -136,6 +124,23 @@ p {
   /* color: rgb(240, 183, 181); */
   color: rgb(245 183 205);
 }
+/* mail icon */
+.mail { 
+  margin-left: 0;
+  margin-left: calc(-1 * var(--icon-gutter)); 
+}
+/* smiley */
+.sentiment_satisfied{
+  /* resolves the icon sitting too high */
+  padding-top: .3rem;  
+}
+/* .project-text span.project-arrow */
+.arrow-right { 
+  margin: 0;
+  padding: 0px;top: -4px;left: 7px;
+}
+
+
 
 /* David logo header */
 .header-graphic{
@@ -153,11 +158,7 @@ p {
   column-gap: var(--icon-gap);
   margin-bottom: var(--section-gap);
 }
-.subject{
-  /* resolves the icon sitting too high */
-  padding-top: .35rem;
-   
-}
+
 
 /* The intro paragraph is being treated as h2 */
 .intro-p {
@@ -170,10 +171,6 @@ p {
   /* color: rgb(240, 183, 181); */
   color: rgb(245 183 205);
 }
-
-
-/* Diamond icon */
-/* no change to the diamond icon */
 
 
 /* Client logos and contact */
@@ -275,14 +272,10 @@ li.whirlpool-logo{
   margin-bottom: var(--section-gap);
   padding-left: calc(1 * var(--icon-gutter))
 }
-/* Star icon */
+/* Star / Mail icon */
 /* .material-symbols-outlined.section-logo.star */
-.stars-2,
-.mail { 
-  margin-left: 0;
-  margin-left: calc(-1 * var(--icon-gutter));
-  
-}
+/* .stars-2, */
+
 .contact-list {
   display: flex;
   line-height: 1.5;
@@ -367,27 +360,17 @@ li.whirlpool-logo{
   
   font-size: var(--fs-2);
 }
-/* .project-text span.project-arrow */
-.arrow-right { 
-  margin: 0;
-  padding: 0px;top: -4px;left: 7px;
-  
-}
 
 
-
-
-/* Beans and Brews thumbnail */
-.beansAndBrew {
-  /* outline: 20px solid #f78000;
-  outline-offset: -20px; */
-}
 
 /* ---------------------- */
 /* breakpoints */
 /* ---------------------- */
 @media(max-width: 1300px){
   .adobe-logo{
+    padding-top: .125rem;
+  }
+   .handshake{
     padding-top: .125rem;
   }
 }
@@ -427,24 +410,20 @@ li.whirlpool-logo{
   }
   /* icon adjustments */
   /* ------------------- */
- .subject{
+ .sentiment_satisfied{
   /* resolves the icon sitting too high */
-    padding-top: .75rem;
+    padding-top: .6rem;
   }
   /* star */
   /* .material-symbols-outlined.section-logo.star */
-  .stars-2,
   .mail{
   margin-left: calc(-1 * var(--icon-gutter));
   position: relative;
   padding-top: .25rem;
   }
-  /* diamond */
-
+ 
   
-  /* smiley */
-  /* .material-symbols-outlined.satisfied */
-  .sentiment-satisfied{
+  .image-icon{
     padding-top: .25rem;
   }
    
@@ -584,6 +563,9 @@ li.whirlpool-logo{
 }
   .project-div .spaghettios-video{
     margin-top: -2rem;
+}
+.perfect_ai_assist{
+  width: 50%;
 }
   
 

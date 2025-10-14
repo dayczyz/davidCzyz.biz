@@ -80,15 +80,15 @@ img {
   margin-top: var(--slide-gap);
 }
 
-.selah2 {
+.intro-text {
   height: auto;
 }
 
-.selah2 p{
-  padding: 2rem 2rem;
+.intro-text p{
+  padding: 3rem 2rem 2rem 2rem;
   max-width: 1000px;
   margin: auto;
-  font-size: var(--fs-2);
+  font-size: var(--fs-4);
   line-height: 1.5;
 }
 
