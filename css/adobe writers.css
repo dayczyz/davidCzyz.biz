@@ -88,3 +88,9 @@ img {
 .slide{
   margin-top: var(--slide-gap);
 }
+
+@media (max-width: 850px){
+  .nav-button {
+    left: 20px;
+  }
+}

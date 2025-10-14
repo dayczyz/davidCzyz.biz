@@ -155,6 +155,9 @@ img {
   .file-diagram {
     display: none;
   }
+  .nav-button {
+    left: 20px;
+  }
 }
 @media (max-width: 750px){
   .intro-text p {

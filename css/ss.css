@@ -85,9 +85,15 @@ img {
 }
 
 .selah2 p{
-  padding: 4rem;
+  padding: 2rem 2rem;
   max-width: 1000px;
   margin: auto;
   font-size: var(--fs-2);
   line-height: 1.5;
+}
+
+@media (max-width: 850px){
+  .nav-button {
+    left: 20px;
+  }
 }

@@ -160,7 +160,11 @@ margin-bottom: var(--graphic-gap)
     /* p */
   --fs-2: 1.125rem;;
   }
+  .nav-button {
+    left: 20px;
+  }
 }
+
 
 @media (max-width: 768px){
   :root {
