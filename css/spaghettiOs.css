@@ -106,7 +106,12 @@ margin: 0 var(--text-lr-padding);
   :root {
     --text-lr-padding: 2.5rem;
   }
+ 
+  .nav-button {
+    left: 20px;
+  }
 }
+
 @media (max-width: 600px){
   :root {
     --text-lr-padding: 1.5rem;
