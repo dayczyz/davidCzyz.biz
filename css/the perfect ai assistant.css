@@ -114,6 +114,15 @@ body {
   position: relative;
   z-index: 10;
 }
+.intro-text{
+  padding: 6rem 3.5rem 4rem 3.5rem;
+  color: white;
+  line-height: 1.25;
+  font-size: var(--fs-1);
+  font-weight: 400;
+  /* word-spacing: .125rem; */
+  letter-spacing: .075rem;
+}
 
 .ai2 img{
   position:relative;
@@ -150,8 +159,25 @@ body {
   height: auto;
 }
 
+@media (max-width: 1000px){
+  .intro-text{
+    padding-left: 3.125rem;
+    padding-right: 3.125rem
+  }
+}
+
 @media (max-width: 850px){
   .nav-button {
     left: 20px;
+  }
+  .intro-text{
+    padding-left: 2.5rem;
+    padding-right: 2.5rem
+  }
+}
+@media (max-width: 600px){
+  .intro-text{
+    padding-left: 2rem;
+    padding-right: 2rem
   }
 }
