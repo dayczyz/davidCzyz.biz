@@ -89,6 +89,7 @@ img {
   max-width: 1000px;
   margin: auto;
   font-size: var(--fs-4);
+  font-weight: 300;
   line-height: 1.5;
 }
 
