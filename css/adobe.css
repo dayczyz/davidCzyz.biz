@@ -156,6 +156,9 @@ img {
 .aaa15 {
   margin-bottom: var(--section-gap)
 }
+.aaa3_5video{
+  padding-bottom: 10px;
+}
 
 
 @media (max-width: 950px){
