@@ -120,6 +120,7 @@ html {
 }
 .black-background:last-of-type{
   padding: 0 3rem;
+  z-index: 1000;
 }
 .white-background{
   background-color: white;
