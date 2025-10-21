@@ -36,18 +36,23 @@
   /* captioning */
   --fs-1: .9rem;
 }
- .nav-button{
-  position:fixed;
+.nav-button{
+  position: fixed;
   top: 2rem;
   left: 38px;
-  border-radius: 50%;
-  border: none;
-  background-color: rgba(255 255 255 / .35);
-  height: 75px;
   width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  border: none;           /* harmless on <a> */
+  display: inline-flex;   /* centers icon without relying on line-height quirks */
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;  /* remove anchor underline */
   cursor: pointer;
   z-index: 1000;
+  background-color: rgba(255 255 255 / .35); /* Selah can override color only */
 }
+
 .nav-button:hover{
   background-color: rgba(255 255 255/.8);
 }
@@ -80,7 +85,7 @@ body {
   
 }
 
-p{
+p {
   padding: 0 8rem;
   font-weight: 400;
   word-spacing: 5%;

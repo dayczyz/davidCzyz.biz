@@ -30,18 +30,23 @@
   /* captioning */
   --fs-1: .9rem;
 }
- .nav-button{
-  position:fixed;
+.nav-button{
+  position: fixed;
   top: 2rem;
   left: 38px;
-  border-radius: 50%;
-  border: none;
-  background-color: rgba(255 255 255 / .5);
-  height: 75px;
   width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  border: none;           /* harmless on <a> */
+  display: inline-flex;   /* centers icon without relying on line-height quirks */
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;  /* remove anchor underline */
   cursor: pointer;
-  
+  z-index: 1000;
+  background-color: rgba(255 255 255 / .35); /* Selah can override color only */
 }
+
 .nav-button:hover{
   background-color: rgba(255 255 255/ .80);
 }
@@ -55,7 +60,7 @@
   display: inline-block;
   /* Your defaults */
   font-size: 32px;
- color: rgba(65 129 110 / .80);
+ color: rgba(32 129 109 / .80);
   
   font-variation-settings: 
     'FILL' 0,   /* 0 outline, 1 filled */
@@ -63,6 +68,7 @@
     'GRAD' 0,
     'opsz' 40;
 }
+
 .material-symbols-outlined:hover{
   color: rgba(65 129 110 / .95);
 }
@@ -91,6 +97,9 @@ img {
   font-size: var(--fs-4);
   font-weight: 300;
   line-height: 1.5;
+}
+.selah1 {
+  width: 100%;
 }
 
 @media (max-width: 850px){
