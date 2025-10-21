@@ -4,6 +4,7 @@
 /* Box Model Hack */
 * {
   box-sizing: border-box;
+  /* outline: 1px solid red; */
 }
 
 :root {
@@ -35,6 +36,9 @@
   --fs-3: 1rem;
   /* captioning */
   --fs-1: .9rem;
+}
+.page-wrapper-adobe{
+  
 }
 .nav-button{
   position: fixed;
@@ -87,8 +91,8 @@ body {
 
 p {
   padding: 0 8rem;
-  font-weight: 400;
-  word-spacing: 5%;
+  font-weight: 300;
+  word-spacing: 10%;
 }
 .italic{
   font-style: italic;
@@ -112,9 +116,11 @@ html {
 }
 .black-background{
   background-color: black;
+  padding: 0 3rem;
 }
 .white-background{
   background-color: white;
+  padding: 0 3rem;
 }
 img {
   width: 100%;
@@ -132,6 +138,7 @@ img {
 .intro-text{
   margin-bottom: 9rem;
   line-height: 1.5;
+  
 }
 .intro-text img{
   padding-bottom: 1.75rem;
@@ -150,12 +157,12 @@ img {
 
 @media (max-width: 950px){
   .intro-text p{
-    padding: 0 6rem;
+    padding: 0 3.5rem;
   }
 }
 @media (max-width: 850px){
   .intro-text p {
-    padding: 0 4.5rem;
+    padding: 0 2rem;
   }
   .file-diagram {
     display: none;
@@ -164,9 +171,9 @@ img {
     left: 20px;
   }
 }
-@media (max-width: 750px){
+@media (max-width: 600px){
   .intro-text p {
-    padding: 0 2rem;
+    padding: 0 0rem;
   }
  
 }
