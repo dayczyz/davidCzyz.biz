@@ -142,6 +142,9 @@ p{
 .div {
   margin-bottom: rem;
 }
+.intro-three-phones{
+  filter: drop-shadow(-2.5mm 3mm .5rem black);
+}
 .intro-text{
     padding: 0 5.5rem 2rem 5.5rem;
   }
@@ -165,6 +168,18 @@ p{
   padding-top: 1rem;
   line-height: 1.35;
 }
+.phone-animation-container{
+  display: flex;
+  justify-content: center;
+}
+video.phone-animation{
+  width: 400px;
+}
+div.wp3,
+div.wp4{
+  margin-bottom: var(--section-gap);
+}
+
 
 
 @media (max-width: 1200px){
@@ -190,6 +205,9 @@ p{
   .intro-text{
     padding: 0 1.5rem 2rem 1.5rem;
   }
+  div.wp4 video{
+  width: 200px;
+}
 }
 
 @media(max-width: 450px){
