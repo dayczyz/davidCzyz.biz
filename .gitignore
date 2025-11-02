@@ -7,5 +7,4 @@ assets/Whirlpool/raw_video/
 assets/Whirlpool/raw_video/
 *.mxf
 
-assets/Whirlpool/gif_to_mp4/
-*.mp4
+# assets/Whirlpool/gif_to_mp4/
