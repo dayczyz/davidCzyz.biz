@@ -349,7 +349,12 @@ li.whirlpool-logo{
   font-weight: 600;
   font-size: var(--fs-2);
 }
-
+.overlay-text{
+  position: absolute;
+  color: red;
+  z-index: 2000;
+  top: 1rem;
+}
 .project-name-and-arrow{
   justify-content: space-around;
   display: flex;
@@ -382,7 +387,7 @@ li.whirlpool-logo{
   }
     :root{
   /* p */
-  --fs-2: 1.125rem;
+  --fs-2: 1rem;
   /* h1 */
   --fs-8: 2.527rem;
    /* h2 */
