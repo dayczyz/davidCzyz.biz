@@ -1,6 +1,7 @@
 /* Box Model Hack */
 * {
   box-sizing: border-box;
+ 
 }
 
 :root {
@@ -125,7 +126,7 @@ p {
   color: rgb(245 183 205);
 }
 /* mail icon */
-.mail { 
+.mail{ 
   margin-left: 0;
   margin-left: calc(-1 * var(--icon-gutter)); 
 }
@@ -263,18 +264,31 @@ li.whirlpool-logo{
   padding-top: .4rem;
 }
 
-
-.contact-container {
-  max-width: 50%;
+.contact-col{
+  flex: 0 0 47%;
+  max-width: 47%;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+.contact-container{
+  max-width: 70%;
   display: grid;
   grid-template-columns: var(--icon-size) 1fr;
   column-gap: var(--icon-gap);
-  margin-bottom: var(--section-gap);
+  /* margin-bottom: var(--section-gap); */
   padding-left: calc(1 * var(--icon-gutter))
 }
-/* Star / Mail icon */
-/* .material-symbols-outlined.section-logo.star */
-/* .stars-2, */
+.contact-container{
+  margin-bottom: .5rem;
+}
+
+.clients-wrapper{
+  display:flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
 
 .contact-list {
   display: flex;
@@ -285,6 +299,13 @@ li.whirlpool-logo{
 .contact-list a{
   color: black;
 }
+.linkedin-icon {
+  width: 22px;
+  padding-left: 3px;
+  padding-top: .1rem;
+}
+
+
 
 /* Projects Section heading with icon */
 .section-heading {
@@ -349,15 +370,13 @@ li.whirlpool-logo{
   font-weight: 600;
   font-size: var(--fs-2);
 }
-.overlay-text{
-  position: absolute;
-  color: red;
-  z-index: 2000;
-  top: 1rem;
-}
+
 .project-name-and-arrow{
   justify-content: space-around;
   display: flex;
+}
+#rain-arrow{
+  padding: 0px; top: -5px; bottom: 5px; 
 }
 
 
@@ -366,18 +385,18 @@ li.whirlpool-logo{
   font-size: var(--fs-2);
 }
 
-
-
 /* ---------------------- */
 /* breakpoints */
 /* ---------------------- */
 @media(max-width: 1300px){
+  
   .adobe-logo{
     padding-top: .125rem;
   }
    .handshake{
     padding-top: .125rem;
   }
+  
 }
 
 
@@ -387,7 +406,7 @@ li.whirlpool-logo{
   }
     :root{
   /* p */
-  --fs-2: 1rem;
+  --fs-2: 1.25rem;
   /* h1 */
   --fs-8: 2.527rem;
    /* h2 */
@@ -421,10 +440,14 @@ li.whirlpool-logo{
   }
   /* star */
   /* .material-symbols-outlined.section-logo.star */
-  .mail{
+  .mail,
+  .linkedin{
   margin-left: calc(-1 * var(--icon-gutter));
   position: relative;
   padding-top: .25rem;
+  }
+  .linkedin-icon{
+    padding-top: .5rem;
   }
  
   
@@ -436,15 +459,22 @@ li.whirlpool-logo{
   .projects-wrapper{
     flex-direction: column;
   }
+  #contact.contact-col{
+    width: 100%;
+    max-width: 100%;
+    gap: .25rem;
+  }
   .contact-container{
     width: 100%;
     grid-template-columns: var(--icon-size) 1fr;
     column-gap: var(--icon-gap);
-    margin-bottom: var(--section-gap);
+    margin-bottom: var(--project-gap);
     padding-left: 0;
 }
   .contact-list{
     margin: 0;
+    width: 100%;
+    
   } 
   
 
@@ -510,7 +540,10 @@ li.whirlpool-logo{
   /* .project-text span.project-arrow  */
   .arrow-right{
   margin: 0;
-  padding: 0px;top: -1px;left: 7px;
+  padding: 0px;top: -2px;left: 7px;
+}
+#rain-arrow{
+  padding: 0px; top: -2px; bottom: 5px; 
 }
 
 .beansAndBrew{
@@ -534,6 +567,7 @@ li.whirlpool-logo{
    
 
 @media (max-width: 950px){
+  
      .project-img video{
     margin: -3.75rem 0 0 0
   }
@@ -548,6 +582,10 @@ li.whirlpool-logo{
 
 
 @media (max-width: 850px){
+  :root{
+  /* p */
+  --fs-2: 1rem;
+  }
 
   .intro-p {
   font-size: var(--fs-5);
