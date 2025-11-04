@@ -1,0 +1,7 @@
+# Redirect Netlify subdomain to primary custom domain
+https://davidczyz.netlify.app/*    https://davidczyz.biz/:splat    301!
+
+# Redirect any non-HTTPS (http://) requests to HTTPS
+http://davidczyz.biz/*             https://davidczyz.biz/:splat    301!
+http://www.davidczyz.biz/*         https://davidczyz.biz/:splat    301!
+
