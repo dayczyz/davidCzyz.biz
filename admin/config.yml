@@ -1,11 +1,15 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: TheOpenC/davidCzyz.biz   # owner/repo
   branch: main
+  base_url: https://www.davidczyz.biz
+  auth_endpoint: /.netlify/functions/decap-github/auth
 
+publish_mode: editorial_workflow
 media_folder: "assets/uploads"
 public_folder: "/assets/uploads"
 
-publish_mode: editorial_workflow
+# keep your existing collections/files below
 
 collections:
   - name: "projects"
