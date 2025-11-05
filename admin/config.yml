@@ -1,0 +1,19 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+publish_mode: editorial_workflow
+
+collections:
+  - name: "projects"
+    label: "Project Pages"
+    files:
+      - label: "Whirlpool Project"
+        name: "whirlpool"
+        file: "html/whirlpool.html"
+        fields:
+          - { label: "Page Title", name: "title", widget: "string" }
+          - { label: "Body HTML", name: "body", widget: "text" }
