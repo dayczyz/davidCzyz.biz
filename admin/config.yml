@@ -2,7 +2,7 @@ backend:
   name: github
   repo: TheOpenC/davidCzyz.biz   # owner/repo
   branch: main
-  base_url: https://www.davidczyz.biz
+  base_url: https://davidczyz.biz
   auth_endpoint: /.netlify/functions/decap-github/auth
 
 publish_mode: editorial_workflow
