@@ -335,7 +335,7 @@ li.whirlpool-logo{
   overflow: hidden; 
   width: 100%;
   /* outline: 2px dotted gray; */
-  border-radius: 1%;
+  border-radius: 12px;
 }
 .project-img > img{
   width: 100%;
